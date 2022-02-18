@@ -1,0 +1,51 @@
+project:
+  type: book
+
+book:
+  title: "Deficiencies in the Retrieved-Context Account of Spacing and Repetition Effects in Free Recall"
+  lang: "en"
+  execute: false
+  chapters:
+    - index.md # abstract
+    - Introduction.md # previous work, high-level explain model and how it makes repetition effects, current goals, argument summary
+    - Methods.md # where datasets come from, main analysis techniques, model spec [or put that in appendix!]
+    #- Baseline_Evaluation.ipynb # present and analyze model fit to benchmark phenomena. Regular Free Recall Phenomena. Neighbor Transition Effect. Spacing Effect (Emphasizing Slope!).  
+    #- Generalization_Tests.ipynb # show that model generalizes across different list lengths but not repetition designs
+    #- Deficient_Repetition_Contiguity.ipynb # present effect, model fits, account of its failure
+    #- Deficient_Encoding_CMR.ipynb # present and justify the mechanism, report results
+    #- Neighbor_Reinstatement_CMR.ipynb # present and justify the mechanism, report results
+    #- Discussion.md # discussion of the results
+    - references.md 
+
+csl: apa.csl
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    code-fold: true
+  pdf:
+    author: 
+      - |
+        | Jordan B. Gunn
+        | Cognition and Cognitive Neuroscience Program
+        | Vanderbilt University
+        | Nashville, TN 37235
+        | \texttt{jordan.gunn@vanderbilt.edu}
+      - |
+        | \textbf{Sean M. Polyn}
+        | Department of Psychological Sciences
+        | Vanderbilt University
+        | Nashville, TN 37235
+        | \texttt{sean.polyn@vanderbilt.edu}
+    header-includes: |
+      \usepackage{setspace}
+      \onehalfspacing
+      %\doublespacing
+      \usepackage{arxiv}
+    toc: false
+    keep-tex: true
+    echo: false
+    output: false
+    documentclass: article
+    #classoption:  12pt

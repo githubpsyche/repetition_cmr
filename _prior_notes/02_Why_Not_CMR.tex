@@ -1,0 +1,18 @@
+\subsection{Model structure}
+First we need to set up our hypothesis and give the reader all the tools they need to understand it. 
+
+We need provide a full specification of CMR with a clear explanation of how it realizes the contextual variability and study-phase retrieval mechanisms for the spacing effect. 
+
+\subsection{Model limitations / theoretical setup}
+To eventually pair with our empirical demonstration, we need to present a complete theoretical account of why CMR struggles to account for the full spacing effect even with these mechanisms, including diagrams and perhaps some initial simulation analyses.
+
+My suspicion is that this section will turn on the similarity structure of contextual states associated with item presentations as lag increases - but this idea has problems. The contextual variability and study-phase retrieval accounts don't predict further gains from increased spacing between two items once corresponding contextual states are sufficiently distinct. Of course, this implies that the rate of contextual drift can determine where these gains start to decelerate, so idk.
+
+\subsection{Initial Analysis}
+Then we might present our methodology for buttressing this analysis, including documentation of our datasets and our fitting approach. I propose we first fit the classic model using the likelihood approach exercised by \cite{morton2016predictive} to demonstrate that even with parameter fitting, the model does a mediocre job.
+
+\subsection{Followup Analysis}
+To really drive our point, though, I think it's most important to fit the model to the data's spacing curve directly using a SSE loss function. If we can't conform the shape of CMR's spacing curve to the data this way, it would prove 'in principle' that the vanilla model can't account for the effect, setting us up for the extension.
+
+We might not find this; indeed, maybe a conflict between ideal parameters to account for single-presentations and for item repetitions explains deflated results. But demonstrating this would also be useful.
+

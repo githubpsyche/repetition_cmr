@@ -1,0 +1,32 @@
+\subsection{Theoretical setup / related ideas}
+\citet{siegel2014retrieved} proposes adding deficient processing by having the amount of context retrieved for a repeated item decreases as a function of its lag - that is, by messing with the learning rate of $M^{FC}$ as a function a lag. This isn't without precedence; \citep{sederberg2008context} analogously proposed a attention-based mechanism varying $M^{CF}$ learning rate by serial position to account for the primacy effect.  \citet{collins2020minerva} proposed MINERVA-DE, an extension of the classic MINERVA 2 model \citep{hintzman1984minerva}, that integrates a deficient-processing mechanism into the instance-based model to account for spacing and repetition effects in recognition memory. MINERVA-DE conceptualizes deficient-processing as an attentional artifact, driven by "temporary, familiarity-mediated shifts in exogenous attention that bias attention toward unfamiliar, not-repeated words and away from familiar, repeated words".
+
+In the MINERVA-DE model, when an item is processed, it's presented as a probe to a fast-forgetting primary memory and an echo intensity is retrieved reflecting the item's degree of familiarity. The fidelity of the trace stored in both primary and a longer-term secondary memory corresponding to this item depends inversely on this retrieved familiarity. 
+
+CMR similarly triggers retrieval of an item's prior contextual associations when it's first encoded. My work on InstanceCMR suggests that this sort of retrieval works similarly to the echo-based retrieval mechanism common in instance-based models, so we can leverage that analogy. Furthermore, MINERVA-DE's dual fast-forgetting primary and comparatively stable secondary memory stores bear some similarity to CMR's context and $M^{FC}$/$M^{CF}$ representations, respectively - though their relationships differ in important mechanistic ways. 
+
+$M^{FC}$ is not a fast-forgetting primary memory, and the $F$ units activated when an item is encoded aren't directly comparable to units in $C$ before probing $M^{FC}$. So we can't measure familiarity in the exact same way. Perhaps instead, we can compare our echo retrieved with $M^{FC} f_i$ to current $C$ to measure item familiarity and then shape learning rates in $M^{FC}$ as proposed by \citet{siegel2014retrieved}.
+
+I find this and even the basis MINERVA-DE a little awkward for a few reasons. First, it supposes that diverted attention can dampen or enhance learning rates during encoding, but for some reason not meaningfully impact retrieval of information useful for calculating familiarity. Does this mean we're assuming that familiarity (as well as contextual drift) is something calculable even with low-level attention but memorization requires more? I guess that's okay.
+
+Second, the version of CMR we've been using lately already has an attention process mediating learning rates; \citet{sederberg2008context} proposes on to enforce the primacy effect, but it impacts $M^{CF}$. Why would we suppose one form of attention affects learning rate dynamics of $M^{CF}$ but not $M^{FC}$, or vice versa? We'll ideally justify our choice in some principled way. Alternatively, we might do the work of performing model comparison between different possible ways of conceptualizing the influence of deficient processing on memory.
+
+One way to do this is to distinguish between attentional processes. \citet{sederberg2008context} focused on evidence that primacy is driven by two processes: "an increased tendency to rehearse items from early serial positions throughout the list presentation" and "increased attention or decreased competition during the study of early list items giving rise to better encoding". This explicitly proposes that primacy arises by deliberately keeping past-studied items in context, justifying a focus on $M^{CF}$'s learning rate, if approximately. MINERVA-DE and the broader deficient-processing account alternatively propose that exogenous -- rather than deliberate -- processes specifically modulate attention to the item currently being encoded to affect learning rates. These contrasts help lay foundation for the idea that the primacy effect is driven by a controlled, context-based mechanism while deficient-processing is driven by an exogenous, item-based mechanism, justifying integrating them differently into our model if we decide we should.
+
+\subsection{Update to model structure + Primary Analysis}
+To investigate whether a deficient processing mechanism meaningfully improves CMR's capacity to account for spacing and repetition effects in free recall, we add this mechanism to CMR and perform model comparison using our datasets and the likelihood-based method outlined above.
+
+We'll compare overall fits, OR-score, transition effects, etc. To the extent that we want.
+
+\subsection{Novel Predictions}
+Adding a mechanism to a model to account for a newly observed effect we now know it struggles with isn't super impressive on its own. 
+
+A big part of the appeal of \citet{siegel2014retrieved}'s work is its demonstration of behavioral phenomena that the contextual-variability and study-phase retrieval mechanism each uniquely account for. 
+
+Ideally at some point in our paper - perhaps not near the end - we'd identify artifacts of deficient processing of familiar items beyond a stronger spacing effect.
+
+One option is to focus on attention: a dataset that tracks attention as someone studies and then performs free recall of a stimulus set with item repetitions would do the trick. We can even perform such an experiment online via jsPsych's eyetracking support maybe. If attention varies according to the predictions of the deficient processing account and predicts later recall, then that'd be great. But this is a lot of work and perhaps even worth a separate paper!
+
+Some analysis of the model or review of related work might help us find more subtle artifacts of the mechanism. Reduced learning rates in $M^{FC}$ for massed repetitions might shape the course of retrieval in meaningful ways. We have the tools to find out.
+
+The literature might have some useful ideas, too. 
