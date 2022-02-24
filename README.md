@@ -5,12 +5,12 @@ Retrieved-context theory (RCT) accounts for free recall of item lists by asserti
 These mechanisms help account for many repetition effects in free recall, including the mnemonic advantage of spaced over massed item repetition and tendencies to successively recall items that follow a shared repeated item [@lohnas2014retrieved]. 
 Here, though, we present evidence that this account has significant deficiencies. 
 
-To re-evaluate RCT, we re-analyzed two datasets used to study repetition effects in free recall [@lohnas2014retrieved; @kahana2005spacing]. 
+To re-evaluate RCT, we analyzed two datasets previously collected to study repetition effects in free recall [@lohnas2014retrieved; @kahana2005spacing]. 
 We applied likelihood-based fitting [@morton2016predictive] to a computational model embodying RCT, the context maintenance and retrieval model [CMR; @polyn2009context]. 
 Across datasets, the model underpredicted the mnemonic benefit of spaced over massed repetition. 
-It also poorly generalized between task conditions that included or excluded item repetitions in study lists [@busemeyer2000model]. 
+It also poorly generalized between task conditions that included or excluded item repetitions in study lists [@busemeyer2000model].
 
-We also report a novel analysis identifying a deficient repetition contiguity effect. 
-After recalling an item presented repeatedly in a study list, participants transitioned more often to neighbors of the item's initial rather than successive presentation(s). 
-CMR poorly accounts for this pattern, even after adding mechanisms to either reduce learning for items' successive presentations or enhance memory for neighbors of items' initial presentations. 
-Contrary to previous reports, these results suggest that repetition effects may present a significant challenge for retrieved-context theory.
+We additionally report a novel analysis identifying a deficient repetition contiguity effect after participants recalled an item repeatedly presented in a list. 
+Participants transitioned more often to neighbors of the item's initial, rather than successive, presentation(s).
+The model cannot account for this pattern, even after adding mechanisms to either reduce learning for items' successive presentations or enhance memory for neighbors of items' initial presentations. 
+Contrary to previous reports, these results suggest repetition effects may present a significant challenge for retrieved-context theory.
