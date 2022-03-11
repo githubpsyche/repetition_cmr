@@ -154,108 +154,26 @@ items that follow a shared repeated item (Lohnas \& Kahana, 2014). Here,
 though, we present evidence that this account has significant
 deficiencies.
 
-To re-evaluate RCT, we re-analyzed two datasets used to study repetition
-effects in free recall (Kahana \& Howard, 2005; Lohnas \& Kahana, 2014).
-We applied likelihood-based fitting (Morton \& Polyn, 2016) to a
-computational model embodying RCT, the context maintenance and retrieval
-model {[}CMR; Polyn, Norman, \& Kahana (2009){]}. Across datasets, the
-model underpredicted the mnemonic benefit of spaced over massed
-repetition. It also poorly generalized between task conditions that
-included or excluded item repetitions in study lists (Busemeyer \& Wang,
-2000).
+To re-evaluate RCT, we analyzed two datasets previously collected to
+study repetition effects in free recall (Kahana \& Howard, 2005; Lohnas
+\& Kahana, 2014). We applied likelihood-based fitting (Morton \& Polyn,
+2016) to a computational model embodying RCT, the context maintenance
+and retrieval model {[}CMR; Polyn, Norman, \& Kahana (2009){]}. Across
+datasets, the model underpredicted the mnemonic benefit of spaced over
+massed repetition. It also poorly generalized between task conditions
+that included or excluded item repetitions in study lists (Busemeyer \&
+Wang, 2000).
 
-We also report a novel analysis identifying a deficient repetition
-contiguity effect: after recalling an item presented repeatedly in a
-study list, participants transitioned more often to neighbors of the
-item's initial rather than successive presentation(s). CMR poorly
-accounts for this pattern, even after adding mechanisms to either reduce
-learning for items' successive presentations or enhance memory for
-neighbors of items' initial presentations. Contrary to previous reports,
-these results suggest that repetition effects may present a significant
-challenge for retrieved-context theory.
-
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
-
-First, start with a review of the spacing effect and then of associated
-effects.
-
-Then bring up the explanations proposed for it across the literature:
-contextual variability, study-phase retrieval, deficient processing.
-
-Review work relating retrieved context theory to two of these accounts,
-and outline the main gaps we'll be addressing. The original paper
-focused on showing how CMR realizes the contextual variability and
-study-phase retrieval effect mechanisms and illustrating similar
-patterns in their own dataset. But while the work showed model
-mechanisms can generate some benchmark repetition and spacing phenomena,
-model fitting was not performed that would evaluate its ability to
-account for patterns of retrieval across free recall of lists with item
-repetitions. This potentially obscures any hidden inconsistencies in the
-retrieved-context account.
-
-Provide high-level overview of how we address this gap in the literature
-through model fitting and simulation, novel behavioral analyses,
-inspection of model representations, and evaluation of accommodative
-mechanisms. Compared to abstract, we can go into enough detail to
-clarify what we mean and contextualize our direction with literature.
-
-And a high-level overview of what we found, what we think this means,
-and what this meaning would implies.
-
-\hypertarget{methods}{%
-\section{Methods}\label{methods}}
-
-How are we evaluating retrieved context theory here? We'll present
-datasets, model, and the new-ish evaluation/fitting technique. We may
-rename this section (``Evaluating RCT at the Level of the Recall
-Sequence'') and/or blend it with the next to emphasize what's new about
-our approach additionally use it to review benchmark phenomena in
-context of our technique, similarly to how Lynn does in her 2014 paper.
-Won't introduce the deficient repetition contiguity effect just yet.
-
-\hypertarget{datasets}{%
-\subsection{Datasets}\label{datasets}}
-
-\hypertarget{lohnas2014}{%
-\subsubsection{Lohnas2014}\label{lohnas2014}}
-
-\hypertarget{howakaha2005}{%
-\subsubsection{HowaKaha2005}\label{howakaha2005}}
-
-\hypertarget{sequence-based-model-evaluation-and-fitting}{%
-\subsection{Sequence-Based Model Evaluation and
-Fitting}\label{sequence-based-model-evaluation-and-fitting}}
-
-To evaluate how effectively each model accounts for the responses in our
-datasets, we applied a likelihood-based model comparison technique
-introduced by (\textbf{kragel2015neural?}) that assesses model variants
-based on how accurately they can predict the specific sequence in which
-items are recalled. According to this method, repeated items and
-intrusions (responses naming items not presented in the list) are
-included from participants' recall sequences. Given an arbitrary
-parameter configuration and sequences of recalls to predict, a model
-simulates encoding of each item presented in the corresponding study
-list in its respective order. Then, beginning with the first item the
-participant recalled in the trial, the probability assigned by the model
-to the recall event is recorded. Next, the model simulates retrieval of
-that item, and given its updated state is used to similarly predict the
-next event in the recall sequence - either retrieval of another item, or
-termination of recall - and so on until retrieval terminates. The
-probability that the model assigns to each event in the recall sequence
-conditional on previous trial events are thus all recorded. These
-recorded probabilities are then log-transformed and summed to obtain the
-log-likelihood of the entire sequence. Across an entire dataset
-containing multiple trials, sequence log-likelihoods can be summed to
-obtain a log-likelihood of the entire dataset given the model and its
-parameters. Higher log-likelihoods assigned to datasets by a model
-correspond to better effectiveness accounting for those datasets.
-
-\hypertarget{cmr}{%
-\subsection{CMR}\label{cmr}}
-
-Model specification blended with details of how it realizes repetition
-effects.
+We additionally report a novel analysis identifying a deficient
+repetition contiguity effect after participants recalled an item
+repeatedly presented in a list. Participants transitioned more often to
+neighbors of the item's initial, rather than successive,
+presentation(s). The model cannot account for this pattern, even after
+adding mechanisms to either reduce learning for items' successive
+presentations or enhance memory for neighbors of items' initial
+presentations. Contrary to previous reports, these results suggest
+repetition effects may present a significant challenge for
+retrieved-context theory.
 
 \hypertarget{references}{%
 \section{References}\label{references}}
