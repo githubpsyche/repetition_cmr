@@ -37,8 +37,6 @@ Contrary to previous reports, these results suggest repetition effects present a
 
 #### Howard & Kahana (2005)
 
-#### A Third?
-
 ### Model Specification (InstanceCMR)
 
 ### Likelihood-based Evaluation

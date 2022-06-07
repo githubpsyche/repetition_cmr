@@ -3,9 +3,12 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"repetition_contiguity": "Deficient_Repetition_Contiguity_Effect.ipynb",
+         "plot_repetition_contiguity": "Deficient_Repetition_Contiguity_Effect.ipynb",
          "recall_by_all_study_positions": "Helper_Functions.ipynb",
          "lag_crp": "Study_Phase_Retrieval_Effect.ipynb",
          "spc": "Serial_Position_Effect.ipynb",
+         "apply_and_create_df": "Serial_Position_Effect.ipynb",
+         "plot_spc": "Serial_Position_Effect.ipynb",
          "recall_probability_by_lag": "Spacing_Effect.ipynb",
          "df_recall_probability_by_lag": "Spacing_Effect.ipynb",
          "repetition_connectivity_by_lag": "helpers.ipynb",
